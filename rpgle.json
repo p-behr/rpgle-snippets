@@ -1,0 +1,80 @@
+{
+	"Select statement": {
+		"prefix": "select",
+		"body": [
+			"select;",
+			"\twhen $1;",
+			"",
+			"\tother;",
+			"",
+			"endsl;",
+			"$2"
+		],
+		"description": "Create a SELECT statement"
+	},
+
+	"If-End": {
+		"prefix": "if",
+		"body": [
+			"if $1;",
+			"\t$2;",
+			"endif;",
+			"$3"
+		],
+		"description": "Create an IF-END statement"
+	},
+
+	"If-Else-End": {
+		"prefix": "if else",
+		"body": [
+			"if $1;",
+			"\t$2;",
+			"else;",
+			"\t$3;",
+			"endif;",
+			"$4"
+		],
+		"description": "Create an IF-ELSE-END statement"
+	},
+
+	"Declare procedure no parms/return":{
+		"prefix": "dcl-proc",
+		"body": [
+			"dcl-proc  $1;",
+			"",
+			"\t$2",
+			"",
+			"\treturn;",
+			"end-proc  $1;"
+		],
+		"description": "Declare a subprocedure no parms/return"
+	},
+
+	"Declare procedure w/return":{
+		"prefix": "dcl-proc rtn",
+		"body": [
+			"dcl-proc  $1;",
+			"\tdcl-pi *n $2;",
+			"\t\t$3;",
+			"\tend-pi;",
+			"",
+			"\tdcl-s  xxxx  $2;",
+               "",
+			"\t$4",
+			"\treturn  xxxx;",
+			"end-proc  $1;"
+		],
+		"description": "Declare a subprocedure with parm and return"
+	},
+
+	"Declare procedure interface":{
+		"prefix": "dcl-pi",
+		"body": [
+			"dcl-pi *n $1;",
+			"\t$2;",
+			"end-pi;",
+			"$3"
+		],
+		"description": "Declare a subprocedure with parm and return"
+	}
+}
