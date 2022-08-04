@@ -59,7 +59,7 @@
 			"\tend-pi;",
 			"",
 			"\tdcl-s  xxxx  $2;",
-               "",
+            "",
 			"\t$4",
 			"\treturn  xxxx;",
 			"end-proc  $1;"
