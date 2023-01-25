@@ -1,0 +1,21 @@
+{
+    // Adds rulers to the screen at cols 80 & 100
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#fa03032a"
+    },
+
+    // Indents the file explorer a bit more than default
+    "workbench.tree.indent": 12,
+
+    // Remove the mini-map (can be toggled with keymap)
+    "editor.minimap.enabled": false,
+
+    // Don't pop up suggestions unless asked for with Ctl+Space
+    "editor.snippetSuggestions": "top",
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.quickSuggestionsDelay": 5000
+}
