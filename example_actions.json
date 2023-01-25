@@ -1,0 +1,16 @@
+{
+    "example_actions" : [
+        {
+            "type": "member",
+            "extensions": [
+                "RPGLE",
+                "RPG",
+                "SQLRPGLE"
+            ],
+            "environment": "ile",
+            "name": "Compile",
+            "command": "CRTSQLRPGI OBJ(${objlib|Object library|&OPENLIB|&OBJ_LIB}/${objname|Object Name|&OPENMBR}) SRCFILE(&OPENLIB/&OPENSPF) OBJTYPE(${objtype|Object Type|*SRVPGM,*PGM,*MODULE}) CLOSQLCSR(*ENDMOD) OPTION(*EVENTF) DBGVIEW(${dbgview|Debug View|*SOURCE,*NONE}) TGTRLS(*CURRENT)",
+            "deployFirst": false
+        }
+    ]
+}
