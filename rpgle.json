@@ -4,11 +4,11 @@
 		"body": [
 			"select;",
 			"\twhen $1;",
-			"",
+			"\t\t$2",
 			"\tother;",
-			"",
+			"\t\t$3",
 			"endsl;",
-			"$2"
+			"$0"
 		],
 		"description": "Create a SELECT statement"
 	},
@@ -19,7 +19,7 @@
 			"if $1;",
 			"\t$2;",
 			"endif;",
-			"$3"
+			"$0"
 		],
 		"description": "Create an IF-END statement"
 	},
@@ -32,7 +32,7 @@
 			"else;",
 			"\t$3;",
 			"endif;",
-			"$4"
+			"$0"
 		],
 		"description": "Create an IF-ELSE-END statement"
 	},
@@ -42,7 +42,7 @@
 		"body": [
 			"dcl-proc  $1;",
 			"",
-			"\t$2",
+			"\t$0",
 			"",
 			"\treturn;",
 			"end-proc  $1;"
@@ -55,16 +55,16 @@
 		"body": [
 			"dcl-proc  $1;",
 			"\tdcl-pi *n $2;",
-			"\t\t$3;",
 			"\tend-pi;",
 			"",
-			"\tdcl-s  xxxx  $2;",
+			"\tdcl-s  rtnVal  $2;",
             "",
-			"\t$4",
-			"\treturn  xxxx;",
+			"\t$0",
+			"",
+			"\treturn  rtnVal;",
 			"end-proc  $1;"
 		],
-		"description": "Declare a subprocedure with parm and return"
+		"description": "Declare a subprocedure with return value"
 	},
 
 	"Declare procedure interface":{
@@ -73,8 +73,18 @@
 			"dcl-pi *n $1;",
 			"\t$2;",
 			"end-pi;",
-			"$3"
+			"$0"
 		],
-		"description": "Declare a subprocedure with parm and return"
+		"description": "Declare a procedure interface"
+	},
+	
+	"Data Structure" : {
+		"prefix" : "dcl-ds",
+		"body" : [
+			"dcl-ds  ${1:name} ${2:qualified} ${3:inz}  ${4:dim()};",
+			"\t${5:subfield}  $6;",
+			"\t$0",
+			"end-ds;"
+		]
 	}
 }
