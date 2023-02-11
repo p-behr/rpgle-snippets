@@ -91,8 +91,9 @@
 	"Control Options" : {
 		"prefix" : "ctl-opt",
 		"body" : [
-			"ctl-opt dftactgrp(*no) actgrp($1);",
-			"ctl-opt option(*nodebugio : *srcstmt);"
+			"ctl-opt dftactgrp(*no) actgrp('$1');",
+			"ctl-opt option(*nodebugio : *srcstmt);",
+			"ctl-opt pgminfo(*pcml : *module);"
 		]
 	}
 }
