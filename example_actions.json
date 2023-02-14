@@ -21,6 +21,16 @@
             "name": "Run SQL",
             "command": "RUNSQLSTM SRCFILE(${srclib|Source Lib|&OPENLIB|&OBJ_LIB}/${srcfile|Source File|&OPENSPF}) SRCMBR(&OPENMBR) COMMIT(${commit|Commit|*NC,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL})",
             "deployFirst": false
+        },
+        {
+            "type": "streamfile",
+            "extensions": [
+                "SQL"
+            ],
+            "environment": "ile",
+            "name": "Run SQL",
+            "command": "RUNSQLSTM SRCSTMF('${srcstmf|Source file|&FULLPATH}') COMMIT(${commit|Commit|*NONE,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL})",
+            "deployFirst": false
         }
     ]
 }
