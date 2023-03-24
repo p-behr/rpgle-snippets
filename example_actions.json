@@ -19,7 +19,7 @@
             ],
             "environment": "ile",
             "name": "Run SQL",
-            "command": "RUNSQLSTM SRCFILE(${srclib|Source Lib|&OPENLIB|&OBJ_LIB}/${srcfile|Source File|&OPENSPF}) SRCMBR(&OPENMBR) COMMIT(${commit|Commit|*NC,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL})",
+            "command": "RUNSQLSTM SRCFILE(${srclib|Source Lib|&OPENLIB|&OBJ_LIB}/${srcfile|Source File|&OPENSPF}) SRCMBR(&OPENMBR) COMMIT(${commit|Commit|*NC,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL}) MARGINS(${margins|Margins|100}) DFTRDBCOL(${dftrdbcol|Default Schema|*NONE})",
             "deployFirst": false
         },
         {
@@ -29,7 +29,7 @@
             ],
             "environment": "ile",
             "name": "Run SQL",
-            "command": "RUNSQLSTM SRCSTMF('${srcstmf|Source file|&FULLPATH}') COMMIT(${commit|Commit|*NONE,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL})",
+            "command": "RUNSQLSTM SRCSTMF('${srcstmf|Source file|&FULLPATH}') COMMIT(${commit|Commit|*NONE,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL}) MARGINS(${margins|Margins|100}) DFTRDBCOL(${dftrdbcol|Default Schema|*NONE})",
             "deployFirst": false
         }
     ]
