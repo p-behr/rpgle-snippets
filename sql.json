@@ -1,0 +1,95 @@
+{
+	"Create Table": {
+		"prefix": "table",
+		"body": [
+			"CREATE OR REPLACE TABLE $1",
+			"FOR SYSTEM NAME $2",
+			"(",
+			"    $3\t\t\tFOR COLUMN $4",
+			"        $5($6)\t\tNOT NULL DEFAULT",
+			")",
+			"RCDFMT $7",
+			"ON REPLACE DELETE ROWS;",
+			"",
+			"",
+			"LABEL ON",
+			"TABLE $1 IS '$8';",
+			"",
+			"",
+			"LABEL ON $1",
+			"(",
+			"    --\t\t\t'1-------------------1-------------------1-------------------'",
+			"    $3\t\tIS  '$9'",
+			");",
+			"",
+			"",
+			"LABEL ON $1",
+			"(",
+			"    $3\t\tTEXT IS  '$9'",
+			");"
+		],
+		"description": "Create or replace table"
+	}
+	,
+
+
+	"Create External Procedure" :{
+		"prefix": "procext",
+		"body": [
+			"CREATE OR REPLACE PROCEDURE call_$1",
+			"(",
+			"    IN $2",
+			")",
+			"SPECIFIC $1",
+			"LANGUAGE RPGLE",
+			"MODIFIES SQL DATA",
+			"PARAMETER STYLE GENERAL",
+			"PROGRAM TYPE $4 -- MAIN or SUB",
+			"EXTERNAL NAME $1",
+		],
+		"description": "Create external procedure"
+	}
+	,
+	
+	"Create Procedure" :{
+		"prefix": "procsql",
+		"body": [
+			"CREATE OR REPLACE PROCEDURE $1",
+			"(",
+			"    IN $2",
+			")",
+			"SPECIFIC $1",
+			"LANGUAGE SQL",
+			"MODIFIES SQL DATA",
+			"SET OPTION commit=*none , datfmt=*iso",
+			"BEGIN",
+			"\t$3",
+			"END;"
+		],
+		"description": "Create SQL procedure"
+	}
+	,
+
+	"Create Table Function" :{
+		"prefix": "funtab",
+		"body": [
+			"CREATE OR REPLACE FUNCTION $1",
+			"(",
+			"    $2",
+			")",
+			"RETURNS TABLE",
+			"(",
+			"\t$3",
+			")",
+			"SPECIFIC $1",
+			"LANGUAGE SQL",
+			"MODIFIES SQL DATA",
+			"SET OPTION commit=*none , datfmt=*iso",
+			"BEGIN",
+			"\tRETURN",
+			"\t$4",
+			"END;"
+		],
+		"description": "Create UDTF"
+	}
+}
