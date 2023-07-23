@@ -17,5 +17,8 @@
     // Don't pop up suggestions unless asked for with Ctl+Space
     "editor.snippetSuggestions": "top",
     "editor.suggestOnTriggerCharacters": false,
-    "editor.quickSuggestionsDelay": 5000
+    "editor.quickSuggestionsDelay": 5000,
+
+    // Prevent file explorer from compressing single child folders
+    "explorer.compactFolders": false,
 }
