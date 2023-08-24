@@ -31,6 +31,16 @@
             "name": "Run SQL",
             "command": "RUNSQLSTM SRCSTMF('${srcstmf|Source file|&FULLPATH}') COMMIT(${commit|Commit|*NONE,*CUR,*CS,*ALL,*RS,*RR}) NAMING(${naming|Naming|*SYS,*SQL}) MARGINS(${margins|Margins|100}) DFTRDBCOL(${dftrdbcol|Default Schema|*NONE})",
             "deployFirst": false
+        },
+        {
+            "type": "streamfile",
+            "extensions": [
+                "RPGLE",
+                "SQLRPGLE"
+            ],
+            "environment": "ile",
+            "name": "Create Service Program CRTSRVPGM",
+            "command": "?CRTSRVPGM SRVPGM(&BUILDLIB/&NAME) MODULE(&BUILDLIB/&NAME) SRCSTMF('&HOME/qsrvsrc/&NAME.bnd')"
         }
     ]
 }
