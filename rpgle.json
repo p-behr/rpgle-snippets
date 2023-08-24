@@ -123,5 +123,25 @@
             "//------------------------------------------------------------------------------",
 	    "$0"
         ]
-    }
+    },
+
+    "Procedure Prototype" : {
+        "prefix" : "dcl-pr",
+        "body" : [
+            "dcl-pr ${1:procedure} ${2:return}  extproc(*dclcase);",
+            "\t${3:parm} \t${4:type}",
+            "end-pr;",
+            "$0"
+        ]
+    },
+
+    "Procedure Program Prototype" : {
+        "prefix" : "dcl-pr pgm",
+        "body" : [
+            "dcl-pr ${1:program} extpgm('$2');",
+            "\t${3:parm} \t${4:type}",
+            "end-pr;",
+            "$0"
+        ]
+    }	
 }
