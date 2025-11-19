@@ -88,32 +88,49 @@
 		]
 	},
 
+    "Bold Header": {
+        "prefix": "===",
+        "body": [
+            "//=====================================================================",
+            "// $1",
+            "//=====================================================================",
+            "$0"
+        ],
+        "description": "Bold Header"
+    },
 
-	"Control Options - PGM" : {
-		"prefix" : "ctl-opt",
-		"body" : [
-            		"ctl-opt dftactgrp(*no) actgrp('$1');",
-            		"ctl-opt option(*nodebugio : *srcstmt : *nounref);",
-			"ctl-opt pgminfo(*pcml : *module);",
-			"",
-			"$0"
-		]
-	},
-
-	"Control Options - SRVPGM" : {
-		"prefix" : "ctl-opt nomain",
-		"body" : [
-			"/if defined(*crtbndrpg)",
-				"\tctl-opt dftactgrp(*no) actgrp('$1');",
-			"/else",
-				"\tctl-opt nomain;",
-			"/endif",
-			"ctl-opt option(*nodebugio : *srcstmt : *nounref);",
-			"ctl-opt pgminfo(*pcml : *module);",
-			"",
-			"$0"
-		]
-	},
+    "RPG Headers": {
+        "prefix": "ctl-opt",
+        "body": [
+            "ctl-opt option(*nodebugio : *srcstmt : *nounref);",
+            "ctl-opt dftactgrp(*no) actgrp(${1:*caller});",
+            "${2:ctl-opt pgminfo(*pcml : *module);}",
+            "$0"
+        ],
+        "description": "RPG Headers/Control Options" 
+    },
+    "RPG Linear-Main Headers": {
+        "prefix": "ctl-opt",
+        "body": [
+            "ctl-opt option(*nodebugio : *srcstmt : *nounref);",
+            "ctl-opt dftactgrp(*no) actgrp(${1:*caller});",
+            "${2:ctl-opt pgminfo(*pcml : *module);}",
+            "ctl-opt main(${3:main});",
+            "$0"
+        ],
+        "description": "RPG Linear-Main Headers/Control Options"
+    },
+    "RPG SRVPGM Headers": {
+        "prefix": "ctl-opt",
+        "body": [
+            "ctl-opt option(*nodebugio : *srcstmt : *nounref);",
+            "ctl-opt dftactgrp(*no) actgrp(${1:*caller});",
+            "${2:ctl-opt pgminfo(*pcml : *module);}",
+            "ctl-opt nomain;",
+            "$0"
+        ],
+        "description": "RPG SRVPGM Headers/Control Options"
+    },
 
     "Comment line" : {
         "prefix" : "---",
@@ -143,5 +160,15 @@
             "end-pr;",
             "$0"
         ]
-    }	
+    },
+
+    "Choices": {
+        "prefix": "choice",
+        "body": [
+            "Make a choice: pick door ${1|one,two,three|};",
+            "$0"
+        ],
+        "description": "Choice"
+    }
+
 }
